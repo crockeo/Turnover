@@ -1,6 +1,4 @@
 TODO List:
 
-1) Complete Player class
-2) Implement cross-platform getch()
-3) Hook everything up in the game file
-4) Implement level loading
+1) Implement cross-platform getch()
+2) Level loading

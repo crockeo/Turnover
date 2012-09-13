@@ -1,3 +1,5 @@
+import Data
+
 class Board:
 	def __init__(self, width, height):
 		self._width = width
@@ -15,7 +17,7 @@ class Board:
 	def convert(self, x, y): return (y * self.getWidth()) + x
 
 	# Flipping a tile
-	def flip(self, x, y):
+	def flipTile(self, x, y):
 		if self.getTile(x, y) == Data.UNACTIVATED:
 			self.setTile(x, y, Data.ACTIVATED)
 		elif self.getTile(x, y) == Data.ACTIVATED:

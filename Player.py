@@ -28,6 +28,17 @@ class Player:
 			return
 
 		# If all is well, just move it!
+
+		# Board operations
+		board.setTile(self.getX(), self.getY(), self.getUnder())
+		board.flipTile(self.getX(), self.getY())
+
+		# Moving the player
+		self.moveTo(newPos[0], newPos[1])
+		self.setUnder(board.getTile(self.getX(), self.getY()))
+
+		# More board operations! :D
+		board.setTile(self.getX(), self.getY(), Data.PLAYER)
 		
 
 	# Moving

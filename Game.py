@@ -2,11 +2,16 @@ import IOUtils
 import Player
 import Board
 
-_running = False
+player = None
+board = None
 
 # Initializing the game
 def init(width, height):
-	pass
+	global _running, player, board
+
+	board = Board.Board(width, height)
+	player = Player.Player(width / 2, height / 2)
+	_running = False
 
 # Starting the game
 def start():
@@ -22,7 +27,31 @@ def stop():
 
 def _loop():
 	while _running:
-		pass
+		# Drawing
+		IOUtils.clear()
+		board.draw()
+
+		# Updating
+		updateVal = _update(IOUtils.getch())
+		if updateVal != None:
+			return updateVal
 
 
 # Loop functions
+def _update(char):
+	# Checking if the user wants to quit
+	if char == 'q':
+		return _finish()
+
+	player.update(char, board) # Updating the player
+
+def _finish():
+	IOUtils.clear()
+
+	answer = ''
+	while (answer.lower() != 'y') and (answer.lower() != 'n')
+		answer = raw_input("Would you like to play again? y/N: ")
+		if answer.lower() == 'y':
+			return True
+		elif (answer == '') or (answer.lower() == 'n'):
+			return False
