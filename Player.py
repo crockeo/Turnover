@@ -27,8 +27,7 @@ class Player:
 		elif board.getTile(newPos[0], newPos[1]) == Data.WALL:
 			return
 
-		# If all is well, just move it!
-
+		
 		# Board operations
 		board.setTile(self.getX(), self.getY(), self.getUnder())
 		board.flipTile(self.getX(), self.getY())

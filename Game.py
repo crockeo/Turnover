@@ -37,6 +37,9 @@ def _loop():
 		if updateVal != None:
 			return updateVal
 
+		if _hasWon():
+			return _finish(True)
+
 
 # Loop functions
 def _update(char):

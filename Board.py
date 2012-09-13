@@ -13,8 +13,8 @@ class Board:
 			for y in range(self.getHeight())
 		)
 
-	def draw(self): print str(self)
-	def convert(self, x, y): return (y * self.getWidth()) + x
+	def draw(self): print str(self) # Drawing
+	def convert(self, x, y): return (y * self.getWidth()) + x # Converting 2D array coords to 1D array coords
 
 	# Flipping a tile
 	def flipTile(self, x, y):

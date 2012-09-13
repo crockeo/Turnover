@@ -23,4 +23,5 @@ while shouldRun:
 
 	shouldRun = Game.start()
 
-print "Thanks for playing!"
+print "Thanks for playing!" # Saying good bye
+raw_input() # Pausing at the end
