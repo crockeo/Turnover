@@ -9,7 +9,7 @@ except ImportError:
 
 # Clearing the terminal
 def clear():
-	if _system == "Windows"
+	if _system == "Windows":
 		os.system("cls")
 	elif os.name == "Posix":
 		os.system("clear")

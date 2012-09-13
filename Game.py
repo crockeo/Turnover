@@ -1,6 +1,7 @@
 import IOUtils
 import Player
 import Board
+import Data
 
 player = None
 board = None
@@ -10,7 +11,7 @@ def init(width, height):
 	global _running, player, board
 
 	board = Board.Board(width, height)
-	player = Player.Player(width / 2, height / 2)
+	player = Player.Player(width / 2, height / 2, board)
 	_running = False
 
 # Starting the game
@@ -45,11 +46,20 @@ def _update(char):
 
 	player.update(char, board) # Updating the player
 
-def _finish():
+def _hasWon():
+	for x in board.getTiles():
+		if x == Data.UNACTIVATED:
+			return False
+	return True
+
+def _finish(won = False):
 	IOUtils.clear()
 
+	if (won):
+		print "You won!"
+
 	answer = ''
-	while (answer.lower() != 'y') and (answer.lower() != 'n')
+	while (answer.lower() != 'y') and (answer.lower() != 'n'):
 		answer = raw_input("Would you like to play again? y/N: ")
 		if answer.lower() == 'y':
 			return True
