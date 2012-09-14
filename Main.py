@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # (For running on Unix)
 
+import Data
 import Game
 
 shouldRun = True
@@ -21,6 +22,7 @@ while shouldRun:
 			print "File not found!\n"
 			continue
 
+	Game.player.setUnder(Data.SPAWN)
 	shouldRun = Game.start()
 
 print "Thanks for playing!" # Saying good bye
