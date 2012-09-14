@@ -31,4 +31,19 @@ class Board:
 
 	# Mutators
 	def setAll(self, value): self._tiles = [value]*(self.getWidth() * self.getHeight())
+	def setSize(self, width, height):
+		self._width = width
+		self._height = height
+
+		old = self.getTiles()
+		self.setAll(Data.UNACTIVATED)
+
+		for x in range(len(old)):
+			self.setTileByIndex(x, old[x])
+
+
+	def setWidth(self, width): self.setSize(width, self.getHeight())
+	def setHeight(self, height): self.setSize(self.getWidth(), height)
+
 	def setTile(self, x, y, value): self._tiles[self.convert(x, y)] = value
+	def setTileByIndex(self, index, value): self._tiles[index] = value

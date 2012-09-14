@@ -1,0 +1,10 @@
+| How To Play |
+In this game you control a hashtag with the WASD keys.
+The goal of the game is to get all ^ (Unactivated) tiles to be * (Activated).
+
+| Tiles |
+# - Player
+@ - Spawn
+& - Wall
+^ - Unactivated Tile
+* - Activated Tile
